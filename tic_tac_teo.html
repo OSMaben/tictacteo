@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>start the game</title>
+</head>
+
+<body class="center">
+
+
+    <header>
+        <nav class="flex justify-between w-[100vw]" style="justify-content: space-around;">
+            <div style="display: flex; flex-direction: column;">
+                <h2 class="PlayerOne"></h2>
+                <span class="PlayerOneScore">0</span>
+            </div>
+            <h2>VS</h2>
+            <div style="display: flex; flex-direction: column;"></div>
+                <h2 class="PlayerTwo"></h2>
+                <span class="PlayerTwoScore">0</span>
+            </div>
+        </nav>
+    </header>
+    <h1>New Game 🎮</h2>
+        <div class="center" id="learn">
+            <!-- table here -->
+            <div id="main">
+                <p id="ins">
+                    Game starts by just Tap on
+                    box<br><br>First Player starts as
+                    <b>Player X </b>And Second Player as
+                    <b>Player 0</b>
+                </p>
+            </div>
+
+
+            <div id="game">
+                <div id="turnIndicator"></div>
+                <div id="grid"></div>
+            </div>
+
+            
+        </div>
+        
+        <script src="main.js"></script>
+</body>
+
+</html>

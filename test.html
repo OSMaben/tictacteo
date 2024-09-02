@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Hero Section With Carousel </title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<main>
+  <div class="content">
+    <h2>Welcome to Comic Book Store</h2>
+    <p> Welcome to your modern comic book store. We have a diverse collection ranging from comics for the perfect collector, thousands of back issues, graphic novels, manga, and comics for the young readers in your life. </p>
+    <ul class="counter">
+      <li>
+        <h3><i class="fa-solid fa-book"></i>50k +</h3>
+        <span>Comic collections</span>
+      </li>
+      <li>
+        <h3><i class="fa-solid fa-user"></i>20,000 + </h3>
+        <span>customers</span>
+      </li>
+    </ul>
+    <button class="btn">Go to Comic Collections <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+
+  <div class="swiper-container">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide--one">
+
+          <span>bestseller</span>
+          <div class="slide-content">
+            <h3>Super Man vs Broly</h3>
+
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide--two">
+          <span>bestseller</span>
+          <div class="slide-content">
+            <h3>Naruto Sasuke</h3>
+            <p>Action Anime Comic</p>
+
+          </div>
+
+        </div>
+        <div class="swiper-slide swiper-slide--three">
+          <span>bestseller</span>
+
+        </div>
+        <div class="swiper-slide swiper-slide--four">
+          <span>bestseller</span>
+
+        </div>
+        <div class="swiper-slide swiper-slide--five">
+          <span>bestseller</span>
+
+        </div>
+        <div class="swiper-slide swiper-slide--six">
+          <span>bestseller</span>
+          <div class="slide-content">
+            <h3>Tanjiro Manga</h3>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="circle"></div>
+</main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
+  <script  src="./main.js"></script>
+<script>
+
+
+// fjsflnsdf
+
+
+
+var swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    spaceBetween: 30,
+    centeredSlides: false,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 0,
+      modifier: 1,
+      slideShadows: false
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      thresholdDelta: 70
+    },
+    breakpoints: {
+      460: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 3
+      },
+      1024: {
+        slidesPerView: 3
+      },
+      1600: {
+        slidesPerView: 3.6
+      }
+    }
+  });
+</script>
+</body>
+</html>

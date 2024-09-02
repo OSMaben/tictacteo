@@ -97,10 +97,23 @@ function handleMove(e) {
     console.log(grid);
     if (!grid[y][x]) { // Only allow move if the cell is empty
         grid[y][x] = currentPlayer;// kn7at smiya dyl player
-        e.target.innerText = currentPlayer === localStorage.getItem('player 1') ? 'X' : 'O';// knjib smiya dyl player 1 li f localstorage oknchof wax nobto ila ah kn3tih x
 
+        if (currentPlayer === localStorage.getItem('player 1')) {
+            e.target.innerText = 'X'; 
+            e.target.classList.add('red');
+        } else {
+            e.target.innerText = 'O'; 
+            e.target.classList.add('blue');
+
+        }
+        
         if (checkWin(x, y)) {
-            alert(`${currentPlayer} wins!`);
+            // alert(`${currentPlayer} wins!`);
+            Swal.fire({
+                title: `${currentPlayer} wins!`,
+                text: "Bsha N3am sidi?",
+                icon: "success"
+              });
            if (currentPlayer == localStorage.getItem('player 1')) {
             ScorePlayer1 += 1;
             localStorage.setItem('scorePlayer1', ScorePlayer1); 
@@ -140,6 +153,8 @@ function checkRow(row) {
 }
 
 function checkColumn(col) {
+
+    
     let count = 0;
     for (let row = 0; row < TicTacTeoSize; row++) {
         if (grid[row][col] === currentPlayer) {
@@ -152,11 +167,15 @@ function checkColumn(col) {
     return false;
 }
 
+
+//top left to buttom right
 function checkMainDiagonal() {
     let count = 0;
     for (let i = 0; i < TicTacTeoSize; i++) {
         if (grid[i][i] === currentPlayer) {
             count++;
+            console.log(grid[i][i]);
+            console.log(count);
             if (count === winnerResult) return true;
         } else {
             count = 0;
@@ -165,14 +184,15 @@ function checkMainDiagonal() {
     return false;
 }
 
+
+//top right to bottom left
 function checkAntiDiagonal() {
     let count = 0;
     for (let i = 0; i < TicTacTeoSize; i++) {
         if (grid[i][TicTacTeoSize - 1 - i] === currentPlayer) {
             count++;
+            console.log(`${currentPlayer} has `, count++);
             if (count === winnerResult) return true;
-        } else {
-            count = 0;
         }
     }
     return false;
@@ -185,5 +205,8 @@ function resetGame() {
     grid = [];
     startGame();
 }
+
+
+
 
 

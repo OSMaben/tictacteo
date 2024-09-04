@@ -109,11 +109,13 @@ function handleMove(e) {
         
         if (checkWin(x, y)) {
             // alert(`${currentPlayer} wins!`);
-            Swal.fire({
-                title: `${currentPlayer} wins!`,
-                text: "Bsha N3am sidi?",
-                icon: "success"
-              });
+            setTimeout(() => {
+                Swal.fire({
+                    title: `${currentPlayer} wins!`,
+                    text: "Good Job",
+                    icon: "success"
+                  });
+            }, 500);
            if (currentPlayer == localStorage.getItem('player 1')) {
             ScorePlayer1 += 1;
             localStorage.setItem('scorePlayer1', ScorePlayer1); 
@@ -126,8 +128,9 @@ function handleMove(e) {
             document.querySelector('.PlayerTwoScore').innerText = localStorage.getItem('scorePlayer2');
             console.log("Score of player 2 is: " + localStorage.getItem('scorePlayer2'));
         }
-            
-            resetGame();
+            setTimeout(() => {
+                resetGame();                
+            }, 1000);
         } else {
             // Switch players
             currentPlayer = currentPlayer === localStorage.getItem('player 1') ? localStorage.getItem('player 2') : localStorage.getItem('player 1');
@@ -159,7 +162,8 @@ function checkColumn(col) {
     for (let row = 0; row < TicTacTeoSize; row++) {
         if (grid[row][col] === currentPlayer) {
             count++;
-            if (count === winnerResult) return true;
+            if (count === winnerResult) 
+                return true;
         } else {
             count = 0;
         }
